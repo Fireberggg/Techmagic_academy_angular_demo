@@ -1,0 +1,11 @@
+<div class="home">
+    <div class="home__header">
+        <h1>{{ tabTitle }}</h1>
+
+        <div class="add-form">
+            <input type="text" [(ngModel)]="taskDescription" />
+            <button [disabled]="!taskDescription.length">Create</button>
+            <p>{{taskDescription}}</p>
+        </div>
+    </div>
+</div>
