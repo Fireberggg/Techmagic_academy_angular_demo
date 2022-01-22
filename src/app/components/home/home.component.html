@@ -2,10 +2,10 @@
     <div class="home__header">
         <h1>{{ tabTitle }}</h1>
 
-        <div class="add-form">
-            <input type="text" [(ngModel)]="taskDescription" />
-            <button [disabled]="!taskDescription.length">Create</button>
-            <p>{{taskDescription}}</p>
-        </div>
+        <app-tasks-form (taskAdded)="addTaskToList($event)"></app-tasks-form>
+    </div>
+
+    <div class="home__task-list">
+        <app-task-list [tasks]="tasks" (taskChecked)="checkTask($event)"></app-task-list>
     </div>
 </div>

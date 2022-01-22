@@ -1,0 +1,23 @@
+.task-list {
+    margin-top: 20px;
+}
+
+.task-list__item {
+    padding: 10px;
+    border: 1px solid #007672;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-done {
+    border: 1px solid red;
+}
+
+.task-list__check {
+    background-color: #fff;
+    border: 1px solid #007672;
+    border-radius: 2px;
+}

@@ -1,0 +1,4 @@
+<div class="add-form">
+    <input type="text" [(ngModel)]="taskDescription" />
+    <button [disabled]="!taskDescription.length" (click)="addTask()">Create</button>
+</div>
