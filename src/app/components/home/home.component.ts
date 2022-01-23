@@ -1,3 +1,4 @@
+import { TasksService } from './../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { ITask } from 'src/app/models/taskList';
 
@@ -8,15 +9,19 @@ import { ITask } from 'src/app/models/taskList';
 })
 export class HomeComponent implements OnInit {
   public tabTitle: string = "Tasks List";
-  public tasks: ITask[] = [
-    { id: 1, description: "Learn Angular", done: false },
-    { id: 2, description: "Read a book", done: true },
-    { id: 3, description: "Do a workout", done: false }
-  ];
+  public tasks: ITask[] = [];
 
-  constructor() { }
+  private getTasksSubscription$: any;
+
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
+    this.getTasksSubscription$ = this.tasksService.getTasks()
+      .subscribe((tasks: ITask[]) => this.tasks = tasks);
+  }
+
+  ngOnDestroy(): void {
+    this.getTasksSubscription$.unsubscribe();
   }
 
   public addTaskToList(taskName: string): void {
