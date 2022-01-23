@@ -24,10 +24,10 @@ export class HomeComponent implements OnInit {
     this.getTasksSubscription$.unsubscribe();
   }
 
-  public addTaskToList(taskName: string): void {
+  public addTaskToList({title, completed}: ITask): void {
     this.tasks = [
       ...this.tasks,
-      { title: taskName, completed: false, id: Math.random() }
+      { title, completed, id: Math.random() }
     ];
   }
 
