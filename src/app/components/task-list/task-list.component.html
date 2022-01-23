@@ -1,6 +1,6 @@
 <div class="task-list">
-    <div class="task-list__item" *ngFor="let task of tasks" [ngClass]="{'task-done': task.done}">
-        <span>{{ task.description }}</span>
-        <input type="checkbox" class="task-list__check" [checked]="task.done" (click)="taskChecked.emit(task)"/>
+    <div class="task-list__item" *ngFor="let task of tasks" [ngClass]="{'task-done': task.completed}" appHighlight>
+        <span>{{ task.title }}</span>
+        <input type="checkbox" class="task-list__check" [checked]="task.completed" (click)="taskChecked.emit(task)"/>
     </div>
 </div>

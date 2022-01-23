@@ -21,3 +21,8 @@
     border: 1px solid #007672;
     border-radius: 2px;
 }
+
+.task-highlight {
+    background-color: #ee004d;
+    transition: 1s all;
+}

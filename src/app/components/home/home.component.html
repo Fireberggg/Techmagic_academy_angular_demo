@@ -5,7 +5,9 @@
         <app-tasks-form (taskAdded)="addTaskToList($event)"></app-tasks-form>
     </div>
 
-    <div class="home__task-list">
+    <div class="home__task-list" *ngIf="tasks.length">
         <app-task-list [tasks]="tasks" (taskChecked)="checkTask($event)"></app-task-list>
     </div>
+
+    <div class="loader" *ngIf="!tasks.length">Loading...</div>
 </div>

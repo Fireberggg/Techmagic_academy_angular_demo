@@ -27,14 +27,14 @@ export class HomeComponent implements OnInit {
   public addTaskToList(taskName: string): void {
     this.tasks = [
       ...this.tasks,
-      { description: taskName, done: false, id: Math.random() }
+      { title: taskName, completed: false, id: Math.random() }
     ];
   }
 
   public checkTask(task: ITask) {
     this.tasks = this.tasks.map((existingTask) => {
       if (existingTask.id === task.id) {
-        existingTask.done = !task.done;
+        existingTask.completed = !task.completed;
       }
 
       return existingTask;
