@@ -9,6 +9,8 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TasksFormComponent } from './components/tasks-form/tasks-form.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     TaskListComponent,
     TasksFormComponent,
-    HighlightDirective
+    HighlightDirective,
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
